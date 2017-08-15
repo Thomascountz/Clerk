@@ -1,24 +1,31 @@
-# README
+# Clerk - Expense Sharing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Blurb
+Clerk allows you to record, split, and track shared expenses and payments. Clerk is for you and your roommates sharing utility bills, you and you best friends traveling cross-country in Canada, or you and your date going Dutch. Keep it objective, keep it fair, keep it real.
 
-Things you may want to cover:
+## Installation
+- Fork the repo
+- `$ cd peanuts`
+- `$ bundle install`
+- Make sure your local PostgreSQL server is running
+- `$ rails db:create`
+- `$ rails db:migrate`
+- `$ rails db:migrate RAILS_ENV=test`
+- Run specs: `$ rspec`
+- `$ rails s`
+- Navigate to `localhost:3000` in your browser
 
-* Ruby version
+## Contributing
+Please submit an issue to github issues. PR's welcome.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## System Architecture
+- Ruby on Rails 5.0
+- Ruby 2.3
+- Postgres
+- Heroku
+- Github 
+- Notable Gems
+  - devise 
+  - simple_form
+  - twitter-bootstrap-rails 
+  - rspec-rails 
