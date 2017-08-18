@@ -13,20 +13,23 @@ require 'rails_helper'
 
 RSpec.feature 'Devise', type: :feature do
 
-	describe 'A new user' do
+	let(:new_user) { attributes_for(:user) }
+	let(:user) { build(:user) }
+
+	context 'A new user' do
 		scenario 'creates an account with valid information' do
 			visit '/'
 			page.click_link('create an account')
 			page.fill_in('Full Name', with: new_user.full_name)
 			page.fill_in('Email', with: new_user.email)
 			page.fill_in('Password', with: new_user.password)
-			page.fill_in('Password Confirmation', with: new_user.password)
+			page.fill_in('Password Confirmation', with: new_user.password_confirmation)
 			page.click_button('Submit')
 			expect(page).to have_content('Welcome! You have signed up successfully.')
 		end
 	end
 
-	describe 'An existing user' do
+	context 'An existing user' do
 		scenario 'signs into their account with valid information' do
 			visit '/'
 			page.click_link('Sign in')
