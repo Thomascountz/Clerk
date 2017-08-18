@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -44,6 +46,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'database_cleaner'
 end
 
 group :development do
