@@ -68,6 +68,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    ffaker (2.6.0)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   factory_girl_rails
+  ffaker
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
