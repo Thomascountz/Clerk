@@ -1,14 +1,3 @@
-# When I'm on the homepage
-# I see a link to "sign up"
-
-# When I click on the link
-# I see a form to create an account
-# With full name, email, password, and password confirmation
-
-# When I fill in valid information
-# And click the "signup" button
-# I am logged in
-
 require 'rails_helper'
 RSpec.feature 'Devise', type: :feature do
 
