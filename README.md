@@ -1,31 +1,31 @@
-# Clerk - Expense Sharing
+# Project Name
 
-## Project Blurb
-Clerk allows you to record, split, and track shared expenses and payments. Clerk is for you and your roommates sharing utility bills, you and you best friends traveling cross-country in Canada, or you and your date going Dutch. Keep it objective, keep it fair, keep it real.
+TODO: Write a project description
 
 ## Installation
-- Fork the repo
-- `$ cd peanuts`
-- `$ bundle install`
-- Make sure your local PostgreSQL server is running
-- `$ rails db:create`
-- `$ rails db:migrate`
-- `$ rails db:migrate RAILS_ENV=test`
-- Run specs: `$ rspec`
-- `$ rails s`
-- Navigate to `localhost:3000` in your browser
+
+TODO: Describe the installation process
+
+## Usage
+
+TODO: Write usage instructions
 
 ## Contributing
-Please submit an issue to github issues. PR's welcome.
 
-## System Architecture
-- Ruby on Rails 5.0
-- Ruby 2.3
-- Postgres
-- Heroku
-- Github 
-- Notable Gems
-  - devise 
-  - simple_form
-  - twitter-bootstrap-rails 
-  - rspec-rails 
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
+## History
+
+TODO: Write history
+
+## Credits
+
+TODO: Write credits
+
+## License
+
+TODO: Write license
