@@ -18,7 +18,7 @@ RSpec.feature 'User log in', type: :feature do
 		it 'shows a message that log out was successful' do
 			login_as(user)
 			visit '/'
-			page.click_link('Sign out')
+			page.click_link('Log out')
 			expect(page).to have_content('Signed out successfully.')
 		end
 	end
