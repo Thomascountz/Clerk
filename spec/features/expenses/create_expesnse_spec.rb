@@ -12,7 +12,7 @@ RSpec.feature 'user creating a new expense', type: :feature do
 		end
 	end
 
-	describe 'valid information' do
+	describe 'with valid information' do
 		it 'shows a message that expense creation was successful' do
 			login_as(user) 
 			visit 'expenses/new'
