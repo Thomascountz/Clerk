@@ -10,9 +10,8 @@
 #  updated_at          :datetime         not null
 #
 
-class User < ApplicationRecord
-  devise :database_authenticatable, :rememberable, :validatable,
-  			 :registerable
+require 'rails_helper'
 
-  has_many :expenses, :foreign_key => "creator_id", dependent: :destroy
+RSpec.describe User, type: :model do
+  it { should have_many(:expenses).with_foreign_key('creator_id').dependent(:destroy) }
 end
