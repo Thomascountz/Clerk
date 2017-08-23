@@ -1,5 +1,9 @@
 class ExpensesController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:index, :new, :create]
+
+	def index
+		@expenses = current_user.expenses
+	end
 
 	def new
 		@expense = current_user.expenses.build
