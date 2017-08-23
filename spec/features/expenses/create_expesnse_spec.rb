@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.feature 'user creating a new expense', type: :feature do
 
 	let(:user) { create(:user) }
-	let(:expense) { create(:expense) }
+	let(:expense) { build(:expense, creator_id: nil) }
 
 	describe 'without logging in' do
 		it 'warns that the user must sign in' do

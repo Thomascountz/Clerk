@@ -3,5 +3,6 @@ FactoryGirl.define do
     title { FFaker::Product.product_name }
     description { FFaker::Lorem.sentence }
     amount { rand(5.00..45.00).round(2) }
+    association :creator, factory: :user
   end
 end

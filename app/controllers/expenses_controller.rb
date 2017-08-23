@@ -1,12 +1,12 @@
 class ExpensesController < ApplicationController
-	before_action :authenticate_user!, only: [:new]
+	before_action :authenticate_user!, only: [:new, :create]
 
 	def new
-		@expense = Expense.new
+		@expense = current_user.expenses.build
 	end
 
 	def create
-		@expense = Expense.new(expense_params)
+		@expense = current_user.expenses.build(expense_params)
 		if @expense.save
 			flash[:success] = "Your expense has been added."
 			redirect_to root_path
