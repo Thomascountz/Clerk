@@ -6,7 +6,7 @@
 #  title       :string           not null
 #  description :text
 #  amount      :decimal(, )      not null
-#  creator_id  :integer
+#  creator_id  :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
