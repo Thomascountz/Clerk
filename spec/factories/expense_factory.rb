@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: expenses
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :text
+#  amount      :decimal(, )      not null
+#  creator_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 FactoryGirl.define do
   factory :expense do
     title { FFaker::Product.product_name }

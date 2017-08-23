@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: expenses
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :text
+#  amount      :decimal(, )      not null
+#  creator_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Expense < ApplicationRecord
 	validates :title, presence: true
 	validates :amount, presence: true, numericality: { greater_than: 0 }
