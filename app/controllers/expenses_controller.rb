@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-	before_action :authenticate_user!, only: [:index, :new, :create]
+	before_action :authenticate_user!, only: [:index, :new, :create, :show]
 
 	def index
 		@expenses = current_user.expenses
@@ -17,6 +17,10 @@ class ExpensesController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def show
+		@expense = Expense.find(params[:id])
 	end
 
 	private
