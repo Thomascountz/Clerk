@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 	root 'static_pages#index'
 
   devise_for :users
-  resources :expenses, only: [:index, :new, :create]
+  resources :expenses, only: [:index, :new, :create, :show]
 end
