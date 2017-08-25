@@ -11,6 +11,7 @@
             <th>Title</th>
             <th>Description</th>
             <th>Amount</th>
+            <th></th>
           </tr>
         </thead>
         <% @expenses.each do |expense| %>
@@ -26,6 +27,8 @@
                 <% end %>
               </td>
               <td><%= number_to_currency(expense.amount) %></td>
+              <!-- TODO: Should I test this link? -->
+              <td><%= link_to "edit", edit_expense_path(expense) %></td>
             </tr>
           </tbody>
         <% end %>
