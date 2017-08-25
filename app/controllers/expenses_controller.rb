@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-	before_action :authenticate_user!, only: [:index, :new, :create, :show]
+	before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit]
 
 	def index
 		@expenses = current_user.expenses
@@ -21,6 +21,20 @@ class ExpensesController < ApplicationController
 
 	def show
 		@expense = Expense.find(params[:id])
+	end
+
+	def edit
+		@expense = Expense.find(params[:id])
+	end
+
+	def update
+		@expense = Expense.find(params[:id])
+		if @expense.update(expense_params)
+			flash[:success] = "Your expense has been updated."
+			redirect_to root_path
+		else
+			render 'edit'
+		end
 	end
 
 	private

@@ -13,7 +13,7 @@ RSpec.feature 'user editing their expense', type: :feature do
 	end
 
 	describe 'with valid information' do
-		xit 'shows a message that expense was updated successfully' do
+		it 'shows a message that expense was updated successfully' do
 			login_as(user) 
 			visit edit_expense_path(expense)
 			page.fill_in('Description', with: FFaker::Lorem.sentence)
@@ -23,7 +23,7 @@ RSpec.feature 'user editing their expense', type: :feature do
 	end
 
 	describe 'with invalid information' do
-		xit 'shows a message that expense creation was not successful' do
+		it 'shows a message that expense creation was not successful' do
 			login_as(user)
 			visit 'expenses/new'
 			page.fill_in('Title', with: "")
