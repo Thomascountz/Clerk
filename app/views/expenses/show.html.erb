@@ -1,2 +1,19 @@
-<%= @expense.title %>
-<%= @expense.description %>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+		<h1>
+			<%= @expense.title %> 
+			<span>
+				<!-- TODO: Should this go into a view helper? -->
+				<em><%= number_to_currency(@expense.amount) %><em>
+			</span>
+		</h1>
+		<!-- TODO: Should this go into a view helper? -->
+		<p>
+			<% if @expense.description.empty? %>
+			  <em>(No Description)</em>
+			<% else %>
+			  <%= @expense.description %>
+			<% end %>
+		</p>
+	</div>
+</div>
