@@ -16,7 +16,8 @@
         <% @expenses.each do |expense| %>
           <tbody>
             <tr class="<%= cycle('odd', 'even') %>">
-              <td><%= expense.title %></td>
+              <!-- TODO: Should I test this link? -->
+              <td><%= link_to "#{expense.title}", expense_path(expense) %></td>
               <td>
                 <% if expense.description.empty? %>
                   <em>(No Description)</em>
