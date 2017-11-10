@@ -25,7 +25,7 @@ RSpec.feature 'user editing their expense', type: :feature do
 	describe 'with invalid information' do
 		it 'shows a message that expense creation was not successful' do
 			login_as(user)
-			visit 'expenses/new'
+			visit edit_expense_path(expense)
 			page.fill_in('Title', with: "")
 			page.click_button('Submit')
 			expect(page).to have_content("Title can't be blank")
