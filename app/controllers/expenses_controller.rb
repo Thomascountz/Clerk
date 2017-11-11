@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
 	before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit]
 
 	def index
-		@expenses = current_user.expenses
+		@expenses = current_user.expenses.order(params[:sort])
 	end
 
 	def new
