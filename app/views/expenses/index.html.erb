@@ -8,10 +8,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th><%= link_to "Title", sort: "title" %></th>
-            <th><%= link_to "Date", sort: "date" %></th>
+            <th><%= sortable column: "title" %></th>
+            <th><%= sortable column: "created_at", title: "Date" %></th>
             <th>Description</th>
-            <th><%= link_to "Amount", sort: "amount" %></th>
+            <th><%= sortable column: "amount" %></th>
             <th></th>
           </tr>
         </thead>
