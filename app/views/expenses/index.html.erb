@@ -5,15 +5,15 @@
     <%= form_tag expenses_path, method: :get do %>
       <%= hidden_field_tag :direction, params[:direction] %>
       <%= hidden_field_tag :sort, params[:sort] %>
-      <div class="form-group">
+      <div class="form-inline">
         <%= text_field_tag :search, params[:search], class: 'form-control' %>
         <%= submit_tag "Search", class: 'btn btn-primary' %>
       </div>
     <% end %>
 
     <% if @expenses.empty? %>
-      <h2>You have no recorded expenses.</h2>
-      <p>Get started by <%= link_to "adding an expense", new_expense_path %>.</p>
+      <h2>No Expenses Found.</h2>
+      <p><%= link_to "Add an expense", new_expense_path %>.</p>
     <% else %>
       <table class="table">
         <thead>
