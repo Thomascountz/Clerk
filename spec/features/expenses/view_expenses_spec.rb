@@ -17,7 +17,7 @@ RSpec.feature 'user viewing a list of their expenses', type: :feature do
 			login_as(user)
 			visit '/expenses'
 			expect(page).to have_content("Your Expenses")
-			expect(page).to have_content('You have no recorded expenses.')
+			expect(page).to have_content('No Expenses Found.')
 			expect(page).to have_link(nil, href:'/expenses/new')
 		end
 	end
