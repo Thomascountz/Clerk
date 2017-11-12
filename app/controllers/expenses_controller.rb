@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
 
 	def index
 		@expenses = current_user.expenses.order("#{sort_column} #{sort_direction}")
+														.paginate(page: params[:page], per_page: 15)
 	end
 
 	def new
