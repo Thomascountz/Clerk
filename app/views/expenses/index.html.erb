@@ -18,34 +18,36 @@
       <h2>No Expenses Found.</h2>
       <p><%= link_to "Add an expense", new_expense_path %>.</p>
     <% else %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th><%= sortable column: "title" %></th>
-            <th><%= sortable column: "created_at", title: "Date" %></th>
-            <th>Description</th>
-            <th><%= sortable column: "amount" %></th>
-            <th></th>
-          </tr>
-        </thead>
-        <% @expenses.each do |expense| %>
-          <tbody>
-            <tr class="<%= cycle('odd', 'even') %>">
-              <td><%= link_to "#{expense.title}", expense_path(expense) %></td>
-              <td><%= expense.created_at.strftime("%m/%d/%y") %></td>
-              <td>
-                <% if expense.description.empty? %>
-                  <em>(No Description)</em>
-                <% else %>
-                  <%= expense.description %>
-                <% end %>
-              </td>
-              <td><%= number_to_currency(expense.amount) %></td>
-              <td><%= link_to "edit", edit_expense_path(expense) %></td>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= sortable column: "title" %></th>
+              <th><%= sortable column: "created_at", title: "Date" %></th>
+              <th>Description</th>
+              <th><%= sortable column: "amount" %></th>
+              <th></th>
             </tr>
-          </tbody>
-        <% end %>
-      </table>
+          </thead>
+          <% @expenses.each do |expense| %>
+            <tbody>
+              <tr class="<%= cycle('odd', 'even') %>">
+                <td><%= link_to "#{expense.title}", expense_path(expense) %></td>
+                <td><%= expense.created_at.strftime("%m/%d/%y") %></td>
+                <td>
+                  <% if expense.description.empty? %>
+                    <em>(No Description)</em>
+                  <% else %>
+                    <%= expense.description %>
+                  <% end %>
+                </td>
+                <td><%= number_to_currency(expense.amount) %></td>
+                <td><%= link_to "edit", edit_expense_path(expense) %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
       <%= will_paginate @expenses %>
     <% end %>
   </div>
