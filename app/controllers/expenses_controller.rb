@@ -4,7 +4,9 @@ class ExpensesController < ApplicationController
 	before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit]
 
 	def index
-		@expenses = current_user.expenses.order("#{sort_column} #{sort_direction}")
+		@expenses = current_user.expenses
+														.search(params[:search])
+														.order("#{sort_column} #{sort_direction}")
 														.paginate(page: params[:page], per_page: 15)
 	end
 

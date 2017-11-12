@@ -16,4 +16,12 @@ class Expense < ApplicationRecord
 	validates :amount, presence: true, numericality: { greater_than: 0 }
 	validates :creator_id, presence: true
 	belongs_to :creator, :foreign_key => :creator_id, :class_name => "User"
+
+	def self.search(search)
+		if search
+			where('title ILIKE ? OR description ILIKE ?', "%#{search}%", "%#{search}%")
+		else
+			all
+		end
+	end
 end

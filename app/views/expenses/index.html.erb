@@ -1,6 +1,16 @@
 <div class="row">
   <div class="col-sm-10 col-sm-offset-1">
     <h1>Your Expenses</h1>
+
+    <%= form_tag expenses_path, method: :get do %>
+      <%= hidden_field_tag :direction, params[:direction] %>
+      <%= hidden_field_tag :sort, params[:sort] %>
+      <div class="form-group">
+        <%= text_field_tag :search, params[:search], class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
     <% if @expenses.empty? %>
       <h2>You have no recorded expenses.</h2>
       <p>Get started by <%= link_to "adding an expense", new_expense_path %>.</p>
