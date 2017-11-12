@@ -7,8 +7,8 @@
       <%= hidden_field_tag :column, params[:column] %>
       <div class="form-inline">
         <%= text_field_tag :search, params[:search], class: 'form-control' %>
-        <%= submit_tag "Search", class: 'btn btn-primary' %>
-        <%= link_to "Clear Search", params.permit(:column, :direction, :page, :search)
+        <%= submit_tag 'Search', class: 'btn btn-primary' %>
+        <%= link_to 'Clear Search', params.permit(:column, :direction, :page, :search)
                                           .merge(page: nil, search: nil), 
                                     class: 'btn btn-danger' %>
       </div>
@@ -16,15 +16,15 @@
 
     <% if @expenses.empty? %>
       <h2>No Expenses Found.</h2>
-      <p><%= link_to "Add an expense", new_expense_path %>.</p>
+      <p><%= link_to 'Add an expense', new_expense_path %>.</p>
     <% else %>
       <div class="table-responsive">
         <table class="table">
           <thead>
             <tr>
-              <th><%= sortable column: "created_at", title: "Date" %></th>
-              <th><%= sortable column: "title" %></th>
-              <th><%= sortable column: "amount" %></th>
+              <th><%= sortable column: 'created_at', title: 'Date' %></th>
+              <th><%= sortable column: 'title' %></th>
+              <th><%= sortable column: 'amount' %></th>
               <th>Description</th>
               <th></th>
             </tr>
@@ -32,7 +32,7 @@
           <% @expenses.each do |expense| %>
             <tbody>
               <tr class="<%= cycle('odd', 'even') %>">
-                <td><%= expense.created_at.strftime("%m/%d/%y") %></td>
+                <td><%= expense.created_at.strftime('%m/%d/%y') %></td>
                 <td><%= link_to "#{expense.title}", expense_path(expense) %></td>
                 <td><%= number_to_currency(expense.amount) %></td>
                 <td>
@@ -42,7 +42,7 @@
                     <%= expense.description %>
                   <% end %>
                 </td>
-                <td><%= link_to "edit", edit_expense_path(expense) %></td>
+                <td><%= link_to 'edit', edit_expense_path(expense) %></td>
               </tr>
             </tbody>
           <% end %>
