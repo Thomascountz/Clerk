@@ -1,4 +1,5 @@
 require 'rails_helper'
+include ExpenseHelper
 
 RSpec.feature 'user viewing a list of their expenses', type: :feature do
 	
@@ -30,8 +31,10 @@ RSpec.feature 'user viewing a list of their expenses', type: :feature do
 			login_as(user)
 			visit '/expenses'
 			expect(page).to have_content("Your Expenses")
+			expect(page).to have_content(format_time(expense1.created_at))
 			expect(page).to have_content(expense1.title)
 			expect(page).to have_content(expense1.description)
+			expect(page).to have_content(format_time(expense2.created_at))
 			expect(page).to have_content(expense2.title)
 			expect(page).to have_content(expense2.description)
 		end

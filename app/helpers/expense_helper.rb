@@ -5,4 +5,8 @@ module ExpenseHelper
 		link_to title, params.permit(:column, :direction, :page, :search)
 												 .merge(column: column, direction: direction, page: nil)
 	end
+
+	def format_time(time)
+		time.try(:strftime, '%m/%d/%y')
+	end
 end

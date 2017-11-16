@@ -32,7 +32,7 @@
           <% @expenses.each do |expense| %>
             <tbody>
               <tr class="<%= cycle('odd', 'even') %>">
-                <td><%= expense.created_at.strftime('%m/%d/%y') %></td>
+                <td><%= format_time(expense.created_at) %></td>
                 <td><%= link_to "#{expense.title}", expense_path(expense) %></td>
                 <td><%= number_to_currency(expense.amount) %></td>
                 <td>
