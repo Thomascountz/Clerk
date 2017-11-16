@@ -1,18 +1,17 @@
 <div class="row">
   <div class="col-sm-10 col-sm-offset-1">
-  	<%= link_to "edit", edit_expense_path(@expense), class: 'btn btn-primary' %>
-		<h1>
-			<%= @expense.title %> 
-			<span>
-				<em><%= number_to_currency(@expense.amount) %><em>
-			</span>
-		</h1>
-		<p>
+  	<%= link_to "edit", edit_expense_path(@expense), class: 'btn btn-warning' %>
+		<h1><%= @expense.title %></h1>
+
+		<div class="expense-details">
+			<p>Recorded on: <%= format_time(@expense.created_at) %>
+			<p>Price: <%= number_to_currency(@expense.amount) %></p>
 			<% if @expense.description.empty? %>
-			  <em>(No Description)</em>
+			  <p>Description: <em>(No Description)</em></p>
 			<% else %>
-			  <%= @expense.description %>
+			  <p>Description: <%= @expense.description %></p>
 			<% end %>
-		</p>
+		</div>
+
 	</div>
 </div>
