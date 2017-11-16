@@ -24,10 +24,6 @@ class ExpensesController < ApplicationController
 		end
 	end
 
-	def show
-		@expense = Expense.find(params[:id])
-	end
-
 	def edit
 		@expense = Expense.find(params[:id])
 	end
