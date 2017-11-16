@@ -32,7 +32,10 @@
                     <%= expense.description %>
                   <% end %>
                 </td>
-                <td><%= link_to 'edit', edit_expense_path(expense) %></td>
+                <td>
+                  <%= link_to 'edit', edit_expense_path(expense), class: 'btn-sm btn-warning' %>
+                  <%= link_to 'delete', expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-sm btn-danger' %>
+                </td>
               </tr>
             </tbody>
           <% end %>

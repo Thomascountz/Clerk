@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
 	helper_method :sort_column, :sort_direction
 
-	before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit]
+	before_action :authenticate_user!
 
 	def index
 		@expenses = current_user.expenses
@@ -39,6 +39,17 @@ class ExpensesController < ApplicationController
 			redirect_to root_path
 		else
 			render 'edit'
+		end
+	end
+
+	def destroy
+		@expense = Expense.find(params[:id])
+		if @expense.destroy
+			flash[:success] = "#{@expense.title} has been deleted."
+			redirect_to root_path
+		else
+			flash[:danger] = "Something went wrong."
+			redirect_to root_path
 		end
 	end
 
