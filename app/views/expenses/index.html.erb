@@ -2,17 +2,7 @@
   <div class="col-sm-10 col-sm-offset-1">
     <h1>Your Expenses</h1>
 
-    <%= form_tag expenses_path, method: :get do %>
-      <%= hidden_field_tag :direction, params[:direction] %>
-      <%= hidden_field_tag :column, params[:column] %>
-      <div class="form-inline">
-        <%= text_field_tag :search, params[:search], class: 'form-control' %>
-        <%= submit_tag 'Search', class: 'btn btn-primary' %>
-        <%= link_to 'Clear Search', params.permit(:column, :direction, :page, :search)
-                                          .merge(page: nil, search: nil), 
-                                    class: 'btn btn-danger' %>
-      </div>
-    <% end %>
+    <%= render 'search_sort_form' %>
 
     <% if @expenses.empty? %>
       <h2>No Expenses Found.</h2>
