@@ -27,7 +27,7 @@
                 <td><%= number_to_currency(expense.amount) %></td>
                 <td>
                   <% if expense.description.empty? %>
-                    <em>(No Description)</em>
+                    <em>No Description</em>
                   <% else %>
                     <%= expense.description %>
                   <% end %>
